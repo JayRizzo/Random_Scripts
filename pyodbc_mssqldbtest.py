@@ -7,6 +7,7 @@
 # =============================================================================
 """The Module Has Been Build for Interaction with MSSQL DBs To Test the con."""
 # =============================================================================
+# Thanks to this post for headers https://stackoverflow.com/q/12704305/1896134
 # Answer to an SO question: https://stackoverflow.com/q/42433408/1896134
 
 import pyodbc
@@ -14,10 +15,12 @@ import pyodbc
 
 def runningwithqueries(query):
     """The Module Has Been Build to {Open, Run & Close} query connection."""
-    print("\nRunning Query: " + str(query) + "\nResult:\n")
+    print("\nRunning Query: " + str(query) + "\nResult :\n")
     crsr = cnxn.execute(query)
+    columns = [column[0] for column in crsr.description]
+    print(columns)
     for row in crsr.fetchall():
-        print(row[0])
+        print(row)
     crsr.close()
 
 # set variables needed for server connection
@@ -65,71 +68,3 @@ runningwithqueries(SQLQUERY7)
 
 # CLOSE THE CONNECTION TO THE DB
 cnxn.close()
-
-"""
-To RUN
-python3 ~/your/path/here/db.py
-
-OUTPUT SHOULD LOOK LIKE:
-
-
-Your Connection String:
-# DRIVER={ODBC Driver 17 for SQL Server};SERVER=yourservername;UID=yourusername;PWD=yourforgottencomplicatedpassword;DSN=MSSQL-PYTHON;DATABASE=yourdatabase;
-
-SELECT * FROM INFORMATION_SCHEMA.COLUMNS;
-
-Running Query: SELECT @@VERSION;
-Result:
-
-Microsoft SQL Server 2017 (RTM-CU3-GDR) (KB4052987) - 14.0.3015.40 (X64)
-    Dec 22 2017 16:13:22
-    Copyright (C) 2017 Microsoft Corporation
-    Express Edition (64-bit) on Windows Server 2012 R2 Standard 6.3 <X64> (Build 9600: ) (Hypervisor)
-
-
-Running Query: SELECT * FROM sys.schemas;
-Result:
-
-dbo
-guest
-INFORMATION_SCHEMA
-sys
-db_owner
-db_accessadmin
-db_securityadmin
-db_ddladmin
-db_backupoperator
-db_datareader
-db_datawriter
-db_denydatareader
-db_denydatawriter
-
-Running Query: SELECT * FROM INFORMATION_SCHEMA.TABLES;
-Result:
-
-
-Running Query: SELECT * FROM INFORMATION_SCHEMA.COLUMNS;
-Result:
-
-
-Running Query: SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
-Result:
-
-
-Running Query: EXEC sp_databases;
-Result:
-
-master
-msdb
-rdsadmin
-tempdb
-TestDB
-
-Running Query: EXEC sp_who2 'active';
-Result:
-
-1..49
-94
-
-"""
-
