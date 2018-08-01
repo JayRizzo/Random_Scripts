@@ -3,7 +3,7 @@
 # =============================================================================
 # Created By  : Jeromie Kirchoff
 # Created Date: Mon July 31 22:32:00 PDT 2018
-# FILENAME: db.py
+# FILENAME: pyodbc_mssqldbtest.py
 # =============================================================================
 """The Module Has Been Build for Interaction with MSSQL DBs To Test the con."""
 # =============================================================================
@@ -30,7 +30,7 @@ password = 'yourforgottencomplicatedpassword'
 database = 'yourdatabase'
 
 connStr = (r'DRIVER={ODBC Driver 17 for SQL Server};' +
-           # r"Integrated Security=true;" +
+           r"Integrated Security=True;" +
            r'SERVER=' + server +
            r';UID=' + username +
            r';PWD=' + password +
@@ -64,7 +64,7 @@ runningwithqueries(SQLQUERY4)
 runningwithqueries(SQLQUERY5)
 runningwithqueries(SQLQUERY6)
 runningwithqueries(SQLQUERY7)
-# runningwithqueries(SQLQUERY8)
+# runningwithqueries(SQLQUERY8) # DENIED FOR AWS RDS
 
 # CLOSE THE CONNECTION TO THE DB
 cnxn.close()
