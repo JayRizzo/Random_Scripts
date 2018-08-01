@@ -9,6 +9,7 @@
 # =============================================================================
 # Thanks to this post for headers https://stackoverflow.com/q/12704305/1896134
 # Answer to an SO question: https://stackoverflow.com/q/42433408/1896134
+# =============================================================================
 
 import pyodbc
 
@@ -23,7 +24,9 @@ def runningwithqueries(query):
         print(row)
     crsr.close()
 
-# set variables needed for server connection
+# =============================================================================
+# SET VARIABLES NEEDED FOR SERVER CONNECTION
+# =============================================================================
 server = 'yourusername'
 username = 'yourusername'
 password = 'yourforgottencomplicatedpassword'
@@ -40,10 +43,14 @@ connStr = (r'DRIVER={ODBC Driver 17 for SQL Server};' +
 
 print("Your Connection String:\n" + str(connStr) + "\n\n")
 
+# =============================================================================
 # CONNECT TO THE DB
+# =============================================================================
 cnxn = pyodbc.connect(connStr, autocommit=True)
 
+# =============================================================================
 # SET QUERIES TO VARIABLES
+# =============================================================================
 SQLQUERY1 = ("SELECT @@VERSION;")
 SQLQUERY2 = ("SELECT * FROM sys.schemas;")
 SQLQUERY3 = ("SELECT * FROM INFORMATION_SCHEMA.TABLES;")
@@ -51,12 +58,11 @@ SQLQUERY4 = ("SELECT * FROM INFORMATION_SCHEMA.COLUMNS;")
 SQLQUERY5 = ("SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS;")
 SQLQUERY6 = ("EXEC sp_databases;")
 SQLQUERY7 = ("EXEC sp_who2 'active';")
-# SQLQUERY8 = ("EXEC sp_monitor;") # DENIED FOR AWS RDS
 
-
-print(SQLQUERY4)
+# =============================================================================
 # RUN QUERIES
 # YOU CAN RUN AS MANY QUERIES AS LONG AS THE CONNECTION IS OPEN TO THE DB
+# =============================================================================
 runningwithqueries(SQLQUERY1)
 runningwithqueries(SQLQUERY2)
 runningwithqueries(SQLQUERY3)
@@ -64,7 +70,8 @@ runningwithqueries(SQLQUERY4)
 runningwithqueries(SQLQUERY5)
 runningwithqueries(SQLQUERY6)
 runningwithqueries(SQLQUERY7)
-# runningwithqueries(SQLQUERY8) # DENIED FOR AWS RDS
 
+# =============================================================================
 # CLOSE THE CONNECTION TO THE DB
+# =============================================================================
 cnxn.close()
