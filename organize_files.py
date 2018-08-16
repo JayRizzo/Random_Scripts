@@ -1,51 +1,107 @@
 #!/usr/bin/env python3
-
 # =============================================================================
-# Created On  : MAC OSX High Sierra 10.13.4 (17E199)
+# Created On  : MAC OSX High Sierra 10.13.6 (17E199)
+# Created On  : Python 3.7.0
 # Created By  : Jeromie Kirchoff
 # Created Date: Mon May 14 21:46:03 PDT 2018
+# Updated Date: Mon August 15 22:34:03 PDT 2018
 # =============================================================================
-# Answer for: https://stackoverflow.com/a/23561726/1896134 PNG Archive
+"""THE MODULE HAS BEEN BUILD FOR KEEPING YOUR FILES ORGANIZED."""
+# Answer for: https://stackoverflow.com/a/50344578/1896134 PNG Archive
 # NOTE: THIS WILL NOT CREATE THE DESTINATION FOLDER(S)
+#
+# Improvements THANKS TO:
+#
+# "Use endswith with multiple extensions"
+# https://stackoverflow.com/a/22812835/1896134
+#
+# "Normalize a pathname by collapsing redundant separators"
+# https://docs.python.org/3/library/os.path.html#os.path.normpath
+#
+# "Styling multi-line conditions in 'if' statements?"
+# https://stackoverflow.com/a/181557/1896134
+#
+#
+# "Python: Line that does not start with #"
+# https://stackoverflow.com/a/34129925/1896134
+#
+# "What is the easiest way to get all strings that do not start with a char?"
+# https://stackoverflow.com/a/6763438/1896134
 # =============================================================================
+from os import walk
+from os import path
+from shutil import move # noqa
+import getpass
+import click
 
-import os
-import shutil
+mac_username = getpass.getuser()
 
-file_extensn = '.png'
-mac_username = 'jkirchoff'
+includes_file_extensn = ([".jpg", ".gif", ".png", ".jpeg",
+                          ])
 
-search_dir = '/Users/' + mac_username + '/Desktop/'
-target_foldr = '/Users/' + mac_username + '/Pictures/Archive/'
-ignore_fldrs = [target_foldr,
-                '/Users/' + mac_username + '/Documents/',
-                '/Users/' + mac_username + '/AnotherFolder/'
-                ]
+# includes_file_extensn = ([".mp4", ".mpg", ".mpeg", ".swf", ".vob", ".wmv",
+#                           ".3g2", ".3gp", ".asf", ".asx", ".avi", ".flv",
+#                           ".m2ts", ".mkv", ".mov",
+#                           ])
 
-for subdir, dirs, files in os.walk(search_dir):
-    for file in files:
-        if subdir not in ignore_fldrs and file.endswith(file_extensn):
-            # print('I would Move this file: ' + str(subdir) + str(file)
-            #       # + "\n To this folder:" + str(target_foldr) + str(file)
-            #       )
+search_dir = path.dirname('/Users/' + mac_username +
+                          '/Documents/')
 
-            filetomove = (str(subdir) + str(file))
-            movingfileto = (str(target_foldr) + str(file))
-            print("filetomove: " + str(filetomove))
-            print("movingfileto: " + str(movingfileto))
+target_foldr = path.dirname('/Users/' + mac_username +
+                            '/Pictures/Archive/')
 
-            # =================================================================
-            # IF YOU ARE HAPPY WITH THE RESULTS
-            # UNCOMMENT THE SHUTIL TO MOVE THE FILES
-            # =================================================================
-            # shutil.move(filetomove, movingfileto)
+# target_foldr = path.dirname('/Users/' + mac_username +
+#                             '/Movies/')
 
-            pass
-        elif file.endswith(file_extensn):
-            # print('Theres no need to move these files: '
-            #       + str(subdir) + str(file))
-            pass
-        else:
-            # print('Theres no need to move these files either: '
-            #       + str(subdir) + str(file))
-            pass
+exclude_foldr = set([target_foldr,
+                     '.app',
+                     path.dirname('/Users/' + mac_username +
+                                  '/Documents/GitHub/'),
+                     path.dirname('/Users/' + mac_username +
+                                  '/Documents/Random/'),
+                     path.dirname('/Users/' + mac_username +
+                                  '/Documents/Stupid_Folder/'),
+                     ])
+
+print("Exclude list: " + str(exclude_foldr))
+print("Files found will be moved to this folder:" + str(target_foldr))
+
+if click.confirm("Would you like to move files?"
+                 "\n No? This will just list the files."
+                 "\n Yes? This will Move your files to the target folder.\n",
+                 default=False):
+    # print('Do something if True?')
+    question_moving = True
+else:
+    # print('Do something if False?')
+    question_moving = False
+
+
+def organize_files():
+    """THE MODULE HAS BEEN BUILD FOR KEEPING YOUR FILES ORGANIZED."""
+    for root, dir, files in walk(search_dir, topdown=True):
+        for file in files:
+            if (not (str(root) + '/').startswith(tuple(exclude_foldr))):
+                if (file.endswith(tuple(includes_file_extensn))):
+                    filetomove = path.normpath(str(root) + '/' +
+                                               str(file))
+                    movingfileto = path.normpath(str(target_foldr) +
+                                                 str(file))
+                    print('Files To Move: ' + str(filetomove))
+                    # This is using the prompt you answered at the beginning
+                    if question_moving is True:
+                        print('Moving File: ' + str(filetomove) +
+                              "\n To:" + str(movingfileto))
+                        move(filetomove, movingfileto)
+                        pass
+                    else:
+                        pass
+                    pass
+                else:
+                    # print('Theres no need to move these files either: ' +
+                    #       str(root) + str(file))
+                    pass
+
+
+if __name__ == '__main__':
+    organize_files()
