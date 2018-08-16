@@ -54,7 +54,6 @@ target_foldr = path.dirname('/Users/' + mac_username +
 #                             '/Movies/')
 
 exclude_foldr = set([target_foldr,
-                     '.app',
                      path.dirname('/Users/' + mac_username +
                                   '/Documents/GitHub/'),
                      path.dirname('/Users/' + mac_username +
