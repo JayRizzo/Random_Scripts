@@ -85,7 +85,7 @@ def organize_files():
                 if (file.endswith(tuple(includes_file_extensn))):
                     filetomove = path.normpath(str(root) + '/' +
                                                str(file))
-                    movingfileto = path.normpath(str(target_foldr) +
+                    movingfileto = path.normpath(str(target_foldr) + '/' +
                                                  str(file))
                     print('Files To Move: ' + str(filetomove))
                     # This is using the prompt you answered at the beginning
