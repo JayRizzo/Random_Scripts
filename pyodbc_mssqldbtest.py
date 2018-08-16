@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # =============================================================================
+# Created On  : MAC OSX High Sierra 10.13.6 (17G65)
+# Created On  : Python 3.7.0
 # Created By  : Jeromie Kirchoff
 # Created Date: Mon July 31 22:32:00 PDT 2018
 # FILENAME: pyodbc_mssqldbtest.py
