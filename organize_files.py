@@ -101,6 +101,8 @@ def organize_files():
                     # print('Theres no need to move these files either: ' +
                     #       str(root) + str(file))
                     pass
+            else:
+                pass
 
 
 if __name__ == '__main__':
