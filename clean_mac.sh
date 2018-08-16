@@ -22,6 +22,16 @@ echo 'Removing DS_Store files...'
 find ~/Documents -type f -name ".DS_Store" -print -delete;
 
 # =============================================================================
+# SHOW & THEN REMOVE ALL MAC OS pyc FILES
+# =============================================================================
+
+echo 'Searching Documents for pyc files...'
+find ~/Documents -type f -name ".pyc" -print;
+
+echo 'Removing pyc files...'
+find ~/Documents -type f -name ".pyc" -print -delete;
+
+# =============================================================================
 # SHOW & THEN REMOVE ALL MAC OS ZERO SIZED FILES
 # =============================================================================
 echo 'Searching Documents for ZERO file sized files...'
@@ -56,3 +66,32 @@ find ~/Documents -type d -empty -delete;
 
 echo 'Showcasing the removal of said, 'empty folders'...'
 find ~/Documents -type d -empty;
+
+# =============================================================================
+# SHOWCASE ALL COMMANDS
+# =============================================================================
+
+# echo 'Searching Documents for empty folders...'
+# find ~/Documents -type d -empty;
+# echo 'Searching Documents for DS_Store files...'
+# find ~/Documents -type f -name ".DS_Store" -print;
+# echo 'Removing DS_Store files...'
+# find ~/Documents -type f -name ".DS_Store" -print -delete;
+# echo 'Searching Documents for pyc files...'
+# find ~/Documents -type f -name ".pyc" -print;
+# echo 'Removing pyc files...'
+# find ~/Documents -type f -name ".pyc" -print -delete;
+# echo 'Searching Documents for ZERO file sized files...'
+# find ~/Documents -type f -empty;
+# echo 'Removing ZERO file sized files...'
+# find ~/Documents -type f -empty -delete;
+# echo 'Searching Documents for Icon files...'
+# find ~/Documents -type f -name 'Icon?' -print;
+# echo 'Removing Icon files from Documents...'
+# find ~/Documents -type f -name 'Icon?' -print -delete;
+# echo 'Showcasing new result of existing and new found empty folders...'
+# find ~/Documents -type d -empty;
+# echo 'Deleting result of empty folders...'
+# find ~/Documents -type d -empty -delete;
+# echo 'Showcasing the removal of said, 'empty folders'...'
+# find ~/Documents -type d -empty;
