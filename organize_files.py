@@ -16,20 +16,24 @@
 # Improvements THANKS TO:
 #
 # "Use endswith with multiple extensions"
-# https://stackoverflow.com/a/22812835/1896134
+#   https://stackoverflow.com/a/22812835/1896134
 #
 # "Normalize a pathname by collapsing redundant separators"
-# https://docs.python.org/3/library/os.path.html#os.path.normpath
+#   https://docs.python.org/3/library/os.path.html#os.path.normpath
 #
 # "Styling multi-line conditions in 'if' statements?"
-# https://stackoverflow.com/a/181557/1896134
+#   https://stackoverflow.com/a/181557/1896134
 #
 #
 # "Python: Line that does not start with #"
-# https://stackoverflow.com/a/34129925/1896134
+#   https://stackoverflow.com/a/34129925/1896134
 #
 # "What is the easiest way to get all strings that do not start with a char?"
-# https://stackoverflow.com/a/6763438/1896134
+#   https://stackoverflow.com/a/6763438/1896134
+#
+# Updated naming convention for `for loop` based on
+# "Python os.walk skip directories with specific name instead of path"
+#   https://stackoverflow.com/a/38928455/1896134
 # =============================================================================
 from os import walk
 from os import path
@@ -81,11 +85,11 @@ else:
 
 def organize_files():
     """THE MODULE HAS BEEN BUILD FOR KEEPING YOUR FILES ORGANIZED."""
-    for root, dir, files in walk(search_dir, topdown=True):
-        for file in files:
-            if (not (str(root) + '/').startswith(tuple(exclude_foldr))):
+    for dirpath, dirnames, filenames in walk(search_dir, topdown=True):
+        for file in filenames:
+            if (not (str(dirpath) + '/').startswith(tuple(exclude_foldr))):
                 if (file.endswith(tuple(includes_file_extensn))):
-                    filetomove = path.normpath(str(root) + '/' +
+                    filetomove = path.normpath(str(dirpath) + '/' +
                                                str(file))
                     movingfileto = path.normpath(str(target_foldr) + '/' +
                                                  str(file))
@@ -101,7 +105,7 @@ def organize_files():
                     pass
                 else:
                     # print('Theres no need to move these files either: ' +
-                    #       str(root) + str(file))
+                    #       str(dirpath) + str(file))
                     pass
             else:
                 pass
