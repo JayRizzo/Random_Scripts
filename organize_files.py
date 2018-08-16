@@ -7,7 +7,10 @@
 # Updated Date: Mon August 15 22:34:03 PDT 2018
 # =============================================================================
 """THE MODULE HAS BEEN BUILD FOR KEEPING YOUR FILES ORGANIZED."""
-# Answer for: https://stackoverflow.com/a/50344578/1896134 PNG Archive
+# Answer for "Moving specific file types with Python":
+#   https://stackoverflow.com/a/50344578/1896134
+# Answer for "Filtering os.walk() dirs and files":
+#   https://stackoverflow.com/a/51871627/1896134
 # NOTE: THIS WILL NOT CREATE THE DESTINATION FOLDER(S)
 #
 # Improvements THANKS TO:
