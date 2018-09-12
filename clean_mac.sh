@@ -70,9 +70,14 @@ find ~/Documents -type d -empty;
 # =============================================================================
 # SHOWCASE ALL COMMANDS
 # =============================================================================
+# todo
+# open /tmp
+# echo $TMPDIR
+# open ~/Library/Caches/
+
 
 # echo 'Searching Documents for empty folders...'
-# find ~/Documents -type d -empty;
+# find ~/Documents -type d -empty -print;
 # echo 'Searching Documents for DS_Store files...'
 # find ~/Documents -type f -name ".DS_Store" -print;
 # echo 'Removing DS_Store files...'
