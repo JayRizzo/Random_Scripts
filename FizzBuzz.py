@@ -8,6 +8,7 @@
 """THE MODULE HAS BEEN BUILD FOR CONVERTING ALL CHARACTERS TO HTML UNICODE."""
 # =============================================================================
 
+
 def fizzybuzzy():
     """Placeholder."""
     i = 1
