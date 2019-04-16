@@ -5,6 +5,7 @@
 # Terminal Location: /Applications/Utilities/Terminal.app
 # =============================================================================
 # Terminal CLEAN UP YOUR DOCUMENTS FOLDER.
+# Answer to Stack Overflow Question: https://superuser.com/a/1322425/247728
 # =============================================================================
 # START WHAT IS BELIEVED TO BE EMPTY NOW.
 # =============================================================================
