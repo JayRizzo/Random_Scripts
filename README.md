@@ -42,13 +42,6 @@ This Module was Built to showcase Examples Of Custom Headers, printing upon exec
 #####  [FizzBuzz.py](https://github.com/JayRizzo/Random_Scripts/blob/master/FizzBuzz.py)
 Is my Python Version of fizzbuzz I wrote myself for fun.
 
-#####  [regex_match.py](https://github.com/JayRizzo/Random_Scripts/blob/master/regex_match.py)
-The Module Has Been Build for trying to find variations of emails in batches of text.
-
-#####  [relativedelta.py](https://github.com/JayRizzo/Random_Scripts/blob/master/relativedelta.py)
-The Module Has Been Build for trying to decipyer measurements between dates. The Stack Overflow User was dealing with arbitrary dates, so my answer was not acceptible.
-* Was an __attempt__ to Answer a Stack Overflow Question: [Calculating number of years between two dates, but rounded in the standard way](https://stackoverflow.com/q/52290952/1896134)
-
 #####  [organize_files.py](https://github.com/JayRizzo/Random_Scripts/blob/master/organize_files.py)
 The Module Has Been Build for keeping your files organized by specific file types.
 * Answer to Stack Overflow Question: [Moving specific file types with Python](https://stackoverflow.com/a/50344578/1896134)
@@ -57,9 +50,20 @@ The Module Has Been Build for keeping your files organized by specific file type
 The Module Has Been Build for Interaction with MSSQL DBs To Test the console for `pyodbc`.
 * Answer to Stack Overflow Question: [Connect Python with SQL Server Database](https://stackoverflow.com/a/51627907/1896134)
 
+#####  [regex_match.py](https://github.com/JayRizzo/Random_Scripts/blob/master/regex_match.py)
+The Module Has Been Build for trying to find variations of emails in batches of text.
+
+#####  [relativedelta.py](https://github.com/JayRizzo/Random_Scripts/blob/master/relativedelta.py)
+The Module Has Been Build for trying to decipyer measurements between dates. The Stack Overflow User was dealing with arbitrary dates, so my answer was not acceptible.
+* Was an __attempt__ to Answer a Stack Overflow Question: [Calculating number of years between two dates, but rounded in the standard way](https://stackoverflow.com/q/52290952/1896134)
+
 #####  [sendgmail.py](https://github.com/JayRizzo/Random_Scripts/blob/master/sendgmail.py)
 The Python Module Has Been Build for Sending Emails from your Gmail Account, bypassing the 2FA.
 * Answer to Stack Overflow Question: [How to send an email with Gmail as provider using Python?](https://stackoverflow.com/a/51664129/1896134)
+
+#####  [testy_class_init.py](https://github.com/JayRizzo/Random_Scripts/blob/master/testy_class_init.py)
+The Module Has Been Build to help a user fix their code.
+* Answer to Stack Overflow Question: [AttributeError: 'str' object has no attribute 'name' while defining a class & calling it](https://stackoverflow.com/a/52360707/1896134)
 
 ##### [uuid_testing.py](https://github.com/JayRizzo/Random_Scripts/blob/master/uuid_testing.py)
 A fix
