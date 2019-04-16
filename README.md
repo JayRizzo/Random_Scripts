@@ -19,7 +19,13 @@ Script Ability:
 - [x] Download your Shopify Store Product Data in a "Clean","Data Set"
 - [x] Download your Shopify Store Product Variant Data in a "Clean","Data Set"
 - [x] Clean the imported data from data that may crash the `bash`, `PHP` or importing your data into `sql`. as the symbols have been converted to HTML References __&trade;__ turns into `&trade;`
-- [x] Personal Creation of this Monstrosity
+- [x] Can be used for `CRONJOBS`
+- [x] Has custom restrictions with proper notificiations
+- [x] Can be used to notify you for failures &/ Sucesses if desired & customized
+
+Script Note:
+
+- [x] This is a Personal Creation of this Monstrosity
 
 ##### [html_ascii_to_html.php](https://github.com/JayRizzo/Random_Scripts/blob/master/html_ascii_to_html.php)
 This Module is a subset of the __shopify_to_csv.php__
@@ -41,7 +47,7 @@ The Module Has Been Build for trying to find variations of emails in batches of 
 
 #####  [relativedelta.py](https://github.com/JayRizzo/Random_Scripts/blob/master/relativedelta.py)
 The Module Has Been Build for trying to decipyer measurements between dates. The Stack Overflow User was dealing with arbitrary dates, so my answer was not acceptible.
-* Was a __attempt__ to Answer a Stack Overflow Question: [Calculating number of years between two dates, but rounded in the standard way](https://stackoverflow.com/q/52290952/1896134)
+* Was an __attempt__ to Answer a Stack Overflow Question: [Calculating number of years between two dates, but rounded in the standard way](https://stackoverflow.com/q/52290952/1896134)
 
 #####  [organize_files.py](https://github.com/JayRizzo/Random_Scripts/blob/master/organize_files.py)
 The Module Has Been Build for keeping your files organized by specific file types.
@@ -64,3 +70,5 @@ A fix
 ##### [clean_mac.sh](https://github.com/JayRizzo/Random_Scripts/blob/master/clean_mac.sh)
 This Module was Built to Clean your ~/Documents Folder from any "Truly" empty folders that may only contain some hidden/ZERO byte files.
 * Answer to Stack Overflow Question: [How can I delete empty folders in Mac OS X?](https://superuser.com/a/1322425/247728)
+
+:godmode: Thank You For Visiting! :godmode:
