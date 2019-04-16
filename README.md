@@ -2,6 +2,20 @@
 
 These are some of my works, either answers to Stack Overflow or my own personal creations. :suspect:
 
+
+### SQL
+##### [postgres_master_everything_reset_script.sql](https://github.com/JayRizzo/Random_Scripts/blob/master/postgres_master_everything_reset_script.sql)
+
+- This Script SETS / RESETS:
+- [x] PERMISSIONS
+- [x] CONSTRAINTS
+- [x] PRIMARY KEYS
+- [x] INDEXES OR INDICES
+- [x] ADDED REINDEX ON THE DATABASE
+- [x] REORDERED THE QUERIES USING THE ORDER BY REPLACE THIS IS MANDITORY
+
+SQL Reset Script that is Dynamic & Static that builds queries that are designed to Standardize Permissions & Improve Performance.  This is highly customizable and effective in making sure your database permissions do not get in the way when dealing with mulitiple users & or Groups with multi standardized structures.
+
 ### PHP
 ##### [shopify_to_csv.php](https://github.com/JayRizzo/Random_Scripts/blob/master/shopify_to_csv.php)
 This Module was Built to Clean your data upon import Converting all Symbols (ASCII) to HTML References to help prevent issues when trying to create a clean "Encapsulated","CSV","FILE"
