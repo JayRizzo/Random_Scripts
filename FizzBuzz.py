@@ -5,7 +5,7 @@
 # Created By  : Jeromie Kirchoff
 # Created Date: Mon Jan 25 13:44:00 PST8PDT 2019
 # =============================================================================
-"""THE MODULE HAS BEEN BUILD FOR CONVERTING ALL CHARACTERS TO HTML UNICODE."""
+"""THE MODULE HAS BEEN BUILD FOR SHOWCASING MY VARIATION OF THE FIZZBUZZ TEST."""
 # =============================================================================
 
 
