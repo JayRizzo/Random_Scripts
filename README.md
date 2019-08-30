@@ -84,6 +84,11 @@ A fix
 > "for attempting to read in CSV data and map it to the following XML structure".
 * Answer to Stack Overflow Question: [Python string formatting and UUID](https://stackoverflow.com/a/52290812/1896134)
 
+##### [xattr_example.py](https://github.com/JayRizzo/Random_Scripts/blob/master/xattr_example.py)
+A Module Built to help a showcase example usage, since no code examples for python's `xattr` could be found. at least for me.
+> "Showcasing a 'How-to' example."
+* Answer to Stack Overflow Question: [Python Module xattr has no attribute list](https://stackoverflow.com/q/52403922/1896134)
+
 ### Shell
 ##### [clean_mac.sh](https://github.com/JayRizzo/Random_Scripts/blob/master/clean_mac.sh)
 This Module was Built to Clean your ~/Documents Folder from any "Truly" empty folders that may only contain some hidden/ZERO byte files.
