@@ -35,10 +35,13 @@
 # "Python os.walk skip directories with specific name instead of path"
 #   https://stackoverflow.com/a/38928455/1896134
 # =============================================================================
-from os import walk
-from os import path
-from shutil import move # noqa
+
 import getpass
+
+from os import path
+from os import walk
+from shutil import move
+
 import click
 
 mac_username = getpass.getuser()
