@@ -10,7 +10,7 @@
 # START WHAT IS BELIEVED TO BE EMPTY NOW.
 # =============================================================================
 echo 'Searching Documents for empty folders...'
-find ~/Documents -type d -empty;
+find ~/Documents -type d -empty -print;
 
 # =============================================================================
 # SHOW & THEN REMOVE ALL MAC OS DS_Store FILES
@@ -36,10 +36,10 @@ find ~/Documents -type f -name ".pyc" -print -delete;
 # SHOW & THEN REMOVE ALL MAC OS ZERO SIZED FILES
 # =============================================================================
 echo 'Searching Documents for ZERO file sized files...'
-find ~/Documents -type f -empty;
+find ~/Documents -type f -empty -print;
 
 echo 'Removing ZERO file sized files...'
-find ~/Documents -type f -empty -delete;
+find ~/Documents -type f -empty -print -delete;
 
 # =============================================================================
 # SHOW & THEN REMOVE Icon^M FILES
@@ -60,44 +60,20 @@ find ~/Documents -type f -name 'Icon?' -print -delete;
 # SHOWCASE NEW FOUND EMPTY FOLDERS
 # =============================================================================
 echo 'Showcasing new result of existing and new found empty folders...'
-find ~/Documents -type d -empty;
+find ~/Documents -type d -empty -print;
 
 echo 'Deleting result of empty folders...'
-find ~/Documents -type d -empty -delete;
+find ~/Documents -type d -empty -print -delete;
+# if you get find: -delete: rmdir(/some/path): Permission denied
+# rerun above with `sudo !!`
 
 echo 'Showcasing the removal of said, 'empty folders'...'
-find ~/Documents -type d -empty;
+find ~/Documents -type d -empty -print;
 
-# =============================================================================
-# SHOWCASE ALL COMMANDS
-# =============================================================================
-# todo
-# open /tmp
-# echo $TMPDIR
-# open ~/Library/Caches/
-
-
-# echo 'Searching Documents for empty folders...'
-# find ~/Documents -type d -empty -print;
-# echo 'Searching Documents for DS_Store files...'
-# find ~/Documents -type f -name ".DS_Store" -print;
-# echo 'Removing DS_Store files...'
-# find ~/Documents -type f -name ".DS_Store" -print -delete;
-# echo 'Searching Documents for pyc files...'
-# find ~/Documents -type f -name ".pyc" -print;
-# echo 'Removing pyc files...'
-# find ~/Documents -type f -name ".pyc" -print -delete;
-# echo 'Searching Documents for ZERO file sized files...'
-# find ~/Documents -type f -empty;
-# echo 'Removing ZERO file sized files...'
-# find ~/Documents -type f -empty -delete;
-# echo 'Searching Documents for Icon files...'
-# find ~/Documents -type f -name 'Icon?' -print;
-# echo 'Removing Icon files from Documents...'
-# find ~/Documents -type f -name 'Icon?' -print -delete;
-# echo 'Showcasing new result of existing and new found empty folders...'
-# find ~/Documents -type d -empty;
-# echo 'Deleting result of empty folders...'
-# find ~/Documents -type d -empty -delete;
-# echo 'Showcasing the removal of said, 'empty folders'...'
-# find ~/Documents -type d -empty;
+# If you get permission issues, these will help solve the ownership issue.
+sudo chown -R $(whoami):staff ~/Desktop/*
+sudo chown -R $(whoami):staff ~/Documents/*
+sudo chown -R $(whoami):staff ~/Downloads/*
+sudo chown -R $(whoami):staff ~/Music/*
+sudo chown -R $(whoami):staff ~/Movies/*
+sudo chown -R $(whoami):staff ~/Pictures/*
