@@ -6,13 +6,11 @@
 # =============================================================================
 import time
 from os import path
-
 from eyed3 import id3
 from eyed3 import load
 
-
-current_home = path.expanduser('~')
-search_dir = path.join(current_home + "/Music/iTunes/iTunes Media/Music/Rush/Chronicles (Disc 2)/2-03 Limelight.mp3")  # noqa
+CURRENT_HOME = path.expanduser('~')
+SEARCH_DIR = path.join(CURRENT_HOME + "/Music/Music/Media.localized/Music/Thrice/Artist in the Ambulance/07 Hoods on Peregrine.mp3")  # noqa
 
 
 def track_info(filename):
@@ -95,11 +93,80 @@ def duration_from_seconds(s):
     m, s = divmod(s, 60)
     h, m = divmod(m, 60)
     d, h = divmod(h, 24)
-    timelapsed = "{:01d}:{:02d}:{:02d}:{:02d}".format(int(d),
-                                                      int(h),
-                                                      int(m),
-                                                      int(s))
-    return timelapsed
+    TIMELAPSED  = f"{d:03.0f}:{h:02.0f}:{m:02.0f}:{s:02.0f}"
+    return TIMELAPSED
 
 
-track_info(search_dir)
+track_info(SEARCH_DIR)
+
+
+
+"""Example Result:
+# ==============================================================================
+Track Name:     Hoods on Peregrine
+Track Artist:   Thrice
+Track Album:    Artist in the Ambulance
+Track Duration: 000:00:08:05
+Track Number:   (7, 12)
+Track BitRate:  (False, 56)
+Track BitRate:  56 kb/s
+Sample Rate:    22050
+Mode:           Mono
+# ==============================================================================
+Album Artist:         Thrice
+Album Year:           2003-03-20
+Album Recording Date: 2003-03-20
+Album Type:           None
+Disc Num:             (1, 1)
+Artist Origin:        None
+# ==============================================================================
+Artist URL:         None
+Audio File URL:     None
+Audio Source URL:   None
+Commercial URL:     None
+Copyright URL:      None
+Internet Radio URL: None
+Publisher URL:      None
+Payment URL:        None
+# ==============================================================================
+Publisher: Island
+Original Release Date: None
+Play Count: None
+Tagging Date: None
+Release Date: None
+Terms Of Use: None
+isV1: False
+isV2: True
+BPM: None
+Cd Id: None
+Composer: Dustin Kensrue/Thrice
+Encoding date: None
+# ==============================================================================
+Genre: Hard Rock
+Non standard genre name: (79)
+Non Std Genre Name: (79)
+Genre ID: 79
+Non standard genre name: (79)
+Non Std Genre ID: None
+LAME Tag:       {}
+# ==============================================================================
+Header Version: (2, 3, 0)
+Header Major Version: 2
+Header Minor Version: 3
+Header Rev Version: 0
+Header Extended: False
+Header Footer: False
+Header Experimental: False
+Header SIZE: 10
+Header Tag Size: 50115
+Extended Header Size: 0
+# ==============================================================================
+File Name: /Users/jkirchoff/Music/Music/Media.localized/Music/Thrice/Artist in the Ambulance/07 Hoods on Peregrine.mp3
+File Tag Size: 50125
+File Tag Padding Size: 9148
+File Read Only: False
+File Size: 3438639
+Last Modified: 2012-06-10 00:55:24
+Last Accessed: 2021-01-01 22:23:06
+# ==============================================================================
+"""

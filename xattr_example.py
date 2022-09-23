@@ -3,6 +3,8 @@
 # =============================================================================
 """The Following Is An Example for xattr.
 
+This is Showcasing File Meta-Attributes.
+
 Answer for: https://stackoverflow.com/q/52403922/1896134
 Showcasing a 'How-to' example.
 """
@@ -34,8 +36,7 @@ class MetaModz(object):
         xattr.setxattr(self.file_name, 'custom.comment',
                        'I tawt I taw a puddy tat!.'.encode('utf-8'))
         xattr.setxattr(self.file_name, 'Music.Artist',
-                       'I did! '
-                       'I did taw a puddy tat!'.encode('utf-8'))
+                       'I did! I did taw a puddy tat!'.encode('utf-8'))
         print("Update Meta Key's Names for File: {}".format(self.file_name))
         return
 
@@ -99,3 +100,32 @@ if __name__ == '__main__':
     a.showww_me_the_meta()
     a.remove_all_the_meta()
     a.showww_me_the_meta()
+
+
+'''
+Example:
+
+    Running File: /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/xattr/__init__.py
+
+    List All Meta Key's: ()
+    Update Meta Key's Names for File: /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/xattr/__init__.py
+    Update Meta Key's Names for File: /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/xattr/__init__.py
+    List All Meta Key's: ('Music.Artist', 'custom.comment', 'custom.owner')
+    Get The Meta for: /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/xattr/__init__.py
+
+       custom.owner : b'jayrizzo'
+       custom.comment : b'I tawt I taw a puddy tat!.'
+       Music.Artist : b'I did! I did taw a puddy tat!'
+
+    Delete The Meta.
+    D. Info Removed Meta: ('Music.Artist', 'custom.owner')
+    The Meta Has Been Removed.
+    List All Meta Key's: ('Music.Artist', 'custom.owner')
+    Deleting All Meta.
+        custom.owner: Removed
+        Music.Artist: Removed
+
+    All Meta Has Been Removed.
+    List All Meta Key's: ()
+
+'''
