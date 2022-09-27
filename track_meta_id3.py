@@ -96,9 +96,20 @@ def duration_from_seconds(s):
     TIMELAPSED  = f"{d:03.0f}:{h:02.0f}:{m:02.0f}:{s:02.0f}"
     return TIMELAPSED
 
+if __name__ == '__main__':
+    track_info(SEARCH_DIR)
 
-track_info(SEARCH_DIR)
-
+    # SHOW ALL CREATED VARIABLES:
+    ALL_VARS = dir()
+    # Iterate over the whole list where dir( ) is stored.
+    print("\n# {}".format('=' * 78))
+    print("\n\nVARIABLES:")
+    for i in ALL_VARS:
+        # Print the item if it doesn't start with '__'
+        if not i.startswith('__'):
+            myvalue = eval(i)
+            print(f"\t{i} is {type(myvalue)} and is equal to {myvalue}")
+    print("\n\n")
 
 
 """Example Result:
@@ -169,4 +180,15 @@ File Size: 3438639
 Last Modified: 2012-06-10 00:55:24
 Last Accessed: 2021-01-01 22:23:06
 # ==============================================================================
+
+VARIABLES:
+    CURRENT_HOME is <class 'str'> and is equal to /Users/jkirchoff
+    SEARCH_DIR is <class 'str'> and is equal to /Users/jkirchoff/Music/Music/Media.localized/Music/Thrice/Artist in the Ambulance/07 Hoods on Peregrine.mp3
+    duration_from_seconds is <class 'function'> and is equal to <function duration_from_seconds at 0x106d81360>
+    id3 is <class 'module'> and is equal to <module 'eyed3.id3' from '/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/eyed3/id3/__init__.py'>
+    load is <class 'function'> and is equal to <function load at 0x106d811b0>
+    path is <class 'module'> and is equal to <module 'posixpath' from '/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/posixpath.py'>
+    time is <class 'module'> and is equal to <module 'time' (built-in)>
+    track_info is <class 'function'> and is equal to <function track_info at 0x106a01ea0>
+
 """

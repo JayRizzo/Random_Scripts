@@ -101,6 +101,17 @@ if __name__ == '__main__':
     a.remove_all_the_meta()
     a.showww_me_the_meta()
 
+    # SHOW ALL CREATED VARIABLES:
+    ALL_VARS = dir()
+    # Iterate over the whole list where dir( ) is stored.
+    print("\n# {}".format('=' * 78))
+    print("\n\nVARIABLES:")
+    for i in ALL_VARS:
+        # Print the item if it doesn't start with '__'
+        if not i.startswith('__'):
+            myvalue = eval(i)
+            print(f"\t{i} is {type(myvalue)} and is equal to {myvalue}")
+    print("\n\n")
 
 '''
 Example:
@@ -127,5 +138,15 @@ Example:
 
     All Meta Has Been Removed.
     List All Meta Key's: ()
+
+# ==============================================================================
+
+
+VARIABLES:
+    MetaModz is <class 'type'> and is equal to <class '__main__.MetaModz'>
+    a is <class '__main__.MetaModz'> and is equal to <__main__.MetaModz object at 0x100b13fa0>
+    getuser is <class 'function'> and is equal to <function getuser at 0x100b03400>
+    xattr is <class 'module'> and is equal to <module 'xattr' from '/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/xattr/__init__.py'>
+
 
 '''
